@@ -1,0 +1,12 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(213, 207, 219);
+}
+
+button{
+    border-radius: 8px;
+    background-color: chartreuse;
+    cursor: pointer;
+}
