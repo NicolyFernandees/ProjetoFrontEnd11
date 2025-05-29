@@ -17,7 +17,7 @@ botao.addEventListener('click',
         const indexEditando = document.getElementById('indexEdite').value;
         if(indexEditando !== ""){ //alterar somente o valor q estamos acessando
             users[indexEditando] = user; //usuario recebe o index de editar, isso limpa os campos (login e senha)
-            document.getElementById('indexEditando').value = ""; //limpando...
+            document.getElementById('indexEdite').value = ""; //limpando...
         }else{ //se estiver vazio
             users.push(user); //lista - entrada
         }
