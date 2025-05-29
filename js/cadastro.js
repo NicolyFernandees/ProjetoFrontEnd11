@@ -8,13 +8,21 @@ const botao = document.getElementById('btnCadastrar'); //const variavel q vc vai
 //fluxo para cadastrar um login, e verificar se ele é valido (função)
 botao.addEventListener('click', 
     function(){//função anonima "funcion()"
-        let users =JSON.parse(localStorage.getItem("users")) || []; //se estiver ocupado usar, senao preencher vetor vazio
+        let users = JSON.parse(localStorage.getItem("users")) || []; //se estiver ocupado usar, senao preencher vetor vazio
         const user = {
             login: document.getElementById('login').value,
             senha: document.getElementById('senha').value
-        }  
+        } 
 
-        users.push(user); //lista - entrada
+        const indexEditando = document.getElementById('indexEdite').value;
+        if(indexEditando !== ""){ //alterar somente o valor q estamos acessando
+            users[indexEditando] = user; //usuario recebe o index de editar, isso limpa os campos (login e senha)
+            document.getElementById('indexEditando').value = ""; //limpando...
+        }else{ //se estiver vazio
+            users.push(user); //lista - entrada
+        }
+
+         
         let listaUsuarios = JSON.stringify(users); //criar uma memoria e guarda nele JSON
         localStorage.setItem("users", listaUsuarios); //set na memoria, listas de usuarios (ARMAZENANDO NA MEMORIA)
     
@@ -66,6 +74,8 @@ function editeUser(index){
     const user = listaUsersCad[index]; //varios indices, que ira capturar
     document.getElementById('login').value = user.login;
     document.getElementById('senha').value = user.senha;
+    document.getElementById('indexEdite').value = index;
+    
 
     
 
