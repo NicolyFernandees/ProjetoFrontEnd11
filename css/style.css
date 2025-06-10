@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
 width: 100vw;
 height: 100vh;
@@ -7,3 +8,17 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 }
+=======
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(213, 207, 219);
+}
+
+button{
+    border-radius: 8px;
+    background-color: rgb(52, 155, 69);
+    cursor: pointer;
+}
+>>>>>>> 3a5b1a94206bdd866fe79b64a6336fb1ca81a121
